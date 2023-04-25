@@ -1,4 +1,4 @@
-# Ansible Rulebook - Hello Events
+# Ansible Rulebook - カスタムソースプラグイン(snmp_trap.py)とともに
 
 このプロジェクトは、Ansible Rulebook を使用して SNMP トラップイベントを監視し、特定の条件に一致するイベントが発生した場合に、指定されたアクションを実行するサンプルです。この例では、以下の設定が含まれています。
 
