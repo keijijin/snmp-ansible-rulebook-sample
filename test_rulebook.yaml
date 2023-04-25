@@ -1,0 +1,21 @@
+---
+- name: Hello Events
+  hosts: localhost
+
+  sources:
+    - snmp_trap:
+        host: 0.0.0.0
+        port: 162
+  
+  rules:
+    - name: Sample rule
+      condition: event.snmp_trap.agentAddress == "127.0.0.1"
+      actions:
+        - run_playbook:
+            name: test_playbook.yml
+        - print_event:
+            pretty: true
+        - debug:
+            msg: "SnmpTrap: {{ event.snmp_trap }}"
+            # var: event.snmp_trap.agentAddress
+...
